@@ -2,8 +2,8 @@
 :description: RISC-V Atomic Load-Acquire and Store-Release Extension (Zalasr)
 :company: RISC-V.org
 :revdate: 2025-07
-:revnumber: 0.9
-:revremark: Changes are highly unlikely. A high threshold will be applied, and modifications will only be made in response to critical issues. Any other proposed changes should be addressed through a follow-on extension.
+:revnumber: 1.0
+:revremark: No changes are allowed. Any necessary or desired modifications must be addressed through a follow-on extension. Ratified extensions are never revised.
 :url-riscv: http://riscv.org
 :doctype: book
 :preface-title: Preamble
@@ -40,9 +40,9 @@ endif::[]
 
 // Preamble
 [WARNING]
-.This document is in the link:http://riscv.org/spec-state[Frozen state]
+.This document is in the link:http://riscv.org/spec-state[Ratified state]
 ====
-Changes are highly unlikely. A high threshold will be applied, and modifications will only be made in response to critical issues. Any other proposed changes should be addressed through a follow-on extension.
+No changes are allowed. Any necessary or desired modifications must be addressed through a follow-on extension. Ratified extensions are never revised.
 ====
 
 [preface]

@@ -13,10 +13,10 @@
 # the Doc Template for RISC-V Extensions.
 
 HEADER_SOURCE := header.adoc
-PDF_RESULT := riscv-zalasr-0p1.pdf
-VERSION ?= 0.9
-REVMARK ?= "Frozen"
-DATE ?= "2025-07-12"
+PDF_RESULT := riscv-zalasr-1p0.pdf
+VERSION ?= 1.0
+REVMARK ?= "Ratified"
+DATE ?= "2025-10-30"
 DOCKER_RUN := docker run --rm -v ${PWD}:/build -w /build \
 riscvintl/riscv-docs-base-container-image:latest
 

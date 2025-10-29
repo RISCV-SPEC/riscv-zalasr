@@ -1,6 +1,6 @@
 [[chapter2]]
 == Instructions
-
+The Zalasr instructions always sign-extend the value placed in _rd_ and ignore the upper bits of the value of _rs2_.
 The instructions in the Zalasr extension require that the address held in _rs1_ be naturally aligned to the size in bytes (2^width^) of the operand.
 If the address is not naturally aligned, an address-misaligned exception or an access-fault exception will be generated.
 The access-fault exception can be generated for a memory access that would otherwise be able to complete except for the misalignment, if the misaligned access should not be emulated.
@@ -14,7 +14,7 @@ If all accessed bytes lie within the same misaligned atomicity granule, the inst
 === Load Acquire
 
 Synopsis::
-The load-acquire instruction, atomically and subject to the ordering annotations specified in the instruction, loads a 2^width^-byte value from the address in _rs1_ into the register _rd_.
+The load-acquire instruction atomically loads a 2^width^-byte value from the address in _rs1_ and places the sign-extended value into the register _rd_, subject to the ordering annotations specified in the instruction.
 
 Mnemonic::
 ====
@@ -43,7 +43,7 @@ Encoding::
 
 Description::
 
-This instruction loads 2^width^ bytes of memory from rs1 atomically.
+This instruction loads 2^width^ bytes of memory from rs1 atomically and writes the result into rd.
 If the size (2^width+3^) is less than XLEN, it is sign-extended to fill the destination register.
 This load must have the ordering annotation _aq_ and may have ordering annotation _rl_ encoded in the instruction.
 The instruction always has an "acquire-RCsc" annotation, and if the bit _rl_ is set the instruction has a "release-RCsc" annotation.
@@ -67,7 +67,7 @@ Load-release has theoretical applications in seqlocks, but is not supported in l
 === Store Release
 
 Synopsis::
-The store-release instruction, atomically and subject to the ordering annotations specified in the instruction, stores the 2^width^-byte value from the register _rs2_ to the address in _rs1_.
+The store-release instruction atomically stores the 2^width^-byte value from the low bits of register _rs2_ to the address in _rs1_, subject to the ordering annotations specified in the instruction.
 
 Mnemonic::
 ====
