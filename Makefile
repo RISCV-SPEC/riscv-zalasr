@@ -18,7 +18,7 @@ VERSION ?= 1.0
 REVMARK ?= "Ratified"
 DATE ?= "2025-10-30"
 DOCKER_RUN := docker run --rm -v ${PWD}:/build -w /build \
-riscvintl/riscv-docs-base-container-image:latest
+ghcr.io/riscv/riscv-docs-base-container-image:latest
 
 ASCIIDOCTOR_PDF := asciidoctor-pdf
 OPTIONS := --trace -a compress \
